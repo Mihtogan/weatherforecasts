@@ -58,7 +58,7 @@ data class Parts(
     val pressure_mm: Float,
     val pressure_pa: Float,
     val humidity: Int,
-    val prec_mm: Int,
+    val prec_mm: Float,
     val prec_period: Int,
     val prec_prob: Float
 )
