@@ -2,4 +2,7 @@
     <string name="app_name">weather forecasts</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="button_run_weatherListFragment">Перейти к списку погоды</string>
+    <string name="request_for_permission">Дай разрешение</string>
 </resources>

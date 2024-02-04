@@ -7,14 +7,14 @@ import androidx.recyclerview.widget.ListAdapter
 import com.example.weatherforecasts.R
 
 
-class Adapter(): ListAdapter<Item, Holder>(Comparator()) {
+class Adapter(): ListAdapter<ItemHour, Holder>(Comparator()) {
 
-    class Comparator : DiffUtil.ItemCallback<Item>() {
-        override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean {
+    class Comparator : DiffUtil.ItemCallback<ItemHour>() {
+        override fun areItemsTheSame(oldItem: ItemHour, newItem: ItemHour): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean {
+        override fun areContentsTheSame(oldItem: ItemHour, newItem: ItemHour): Boolean {
             return oldItem == newItem
         }
     }

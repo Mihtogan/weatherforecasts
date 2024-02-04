@@ -1,14 +1,14 @@
 package com.example.weatherforecasts.RecViList
 
-import com.example.weatherforecasts.WeatherList.RecViList.RecViHourItem.Item
+import com.example.weatherforecasts.WeatherList.RecViList.RecViHourItem.ItemHour
 
 data class Item(
     val serviceName: String,
-    val temperatureAir: Int,
-    val temperatureComfort: Int,
+    val temperatureAir: Float,
+    val temperatureComfort: Float,
     val description: String,
-    val humidity: Int,
-    val hour: List<Item>,
+    val humidity: Float,
+    val hour: List<ItemHour>,
     val icon: String? = null,
 )
 

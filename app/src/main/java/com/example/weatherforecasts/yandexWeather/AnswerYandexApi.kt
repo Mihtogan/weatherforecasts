@@ -11,16 +11,16 @@ interface AnswerYandexApi {
     @GET("v2/informers")
     fun getAnswer(
         @Header("X-Yandex-API-Key") key: String,
-        @Query("lat") let: Double,
-        @Query("lon") lon: Double,
+        @Query("lat") let: Float,
+        @Query("lon") lon: Float,
         @Query("lang") lang: String = "ru_RU"
     ): Call<AnswerYandex>
 
     @GET("v2/informers")
     suspend fun getAnswerResponse(
         @Header("X-Yandex-API-Key") key: String,
-        @Query("lat") let: Double,
-        @Query("lon") lon: Double,
+        @Query("lat") let: Float,
+        @Query("lon") lon: Float,
         @Query("lang") lang: String = "ru_RU"
     ): Response<AnswerYandex>
 }

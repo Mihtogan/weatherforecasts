@@ -10,7 +10,9 @@ import androidx.lifecycle.LifecycleOwner
 import com.example.weatherforecasts.MainViewModel
 import com.example.weatherforecasts.RecViList.Adapter
 import com.example.weatherforecasts.databinding.FragmentWeatherListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WeatherListFragment : Fragment() {
 
     private lateinit var binding: FragmentWeatherListBinding
