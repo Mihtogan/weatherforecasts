@@ -5,7 +5,7 @@
     android:id="@+id/ReViWeatList"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WeatherList.WeatherListFragment"
+    tools:context=".Fragments.WeatherListFragment"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     android:orientation="vertical"
     tools:listitem="@layout/weather_list_item"

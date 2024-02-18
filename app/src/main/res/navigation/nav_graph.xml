@@ -7,16 +7,24 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.weatherforecasts.MainFragment"
+        android:name="com.example.weatherforecasts.Fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_weatherListFragment"
             app:destination="@id/weatherListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_weatherChartFragment"
+            app:destination="@id/weatherChartFragment" />
     </fragment>
     <fragment
         android:id="@+id/weatherListFragment"
-        android:name="com.example.weatherforecasts.WeatherList.WeatherListFragment"
+        android:name="com.example.weatherforecasts.Fragments.WeatherListFragment"
         android:label="fragment_weather_list"
         tools:layout="@layout/fragment_weather_list" />
+    <fragment
+        android:id="@+id/weatherChartFragment"
+        android:name="com.example.weatherforecasts.Fragments.WeatherChartFragment"
+        android:label="fragment_weather_chart"
+        tools:layout="@layout/fragment_weather_chart" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.weatherforecasts.WeatherList
+package com.example.weatherforecasts.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
-import com.example.weatherforecasts.MainViewModel
+import com.example.weatherforecasts.ViewModels.MainViewModel
 import com.example.weatherforecasts.RecViList.Adapter
 import com.example.weatherforecasts.databinding.FragmentWeatherListBinding
 import dagger.hilt.android.AndroidEntryPoint

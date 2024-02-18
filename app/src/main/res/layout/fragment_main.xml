@@ -4,30 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFragment">
+    tools:context=".Fragments.MainFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_begin="400dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/cityName"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:hint="@string/request_cityName"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/butCityName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline" />
+
+    <ImageView
+        android:id="@+id/butCityName"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:foreground="@android:drawable/ic_menu_search"
+        android:foregroundTint="@color/button_in_mainFragment"
+        app:layout_constraintEnd_toStartOf="@id/butGPS"
+        app:layout_constraintStart_toEndOf="@id/cityName"
+        app:layout_constraintTop_toTopOf="@id/guideline" />
 
     <ImageView
         android:id="@+id/butGPS"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:foreground="@android:drawable/ic_menu_mylocation"
-        android:foregroundTint="#216EF3"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:foregroundTint="@color/button_in_mainFragment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.60" />
+        app:layout_constraintStart_toEndOf="@id/butCityName"
+        app:layout_constraintTop_toTopOf="@id/guideline" />
 
     <Button
         android:id="@+id/butGoWeatList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="65dp"
+        android:text="@string/button_run_weatherListFragment"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/butGPS"
-        android:text="@string/button_run_weatherListFragment"
-        android:textSize="20sp"/>
+        app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+    <Button
+        android:id="@+id/butGoChart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/button_run_ChartFragment"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/butGoWeatList"
+        app:layout_constraintStart_toStartOf="@id/butGoWeatList"
+        app:layout_constraintTop_toBottomOf="@id/butGoWeatList" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

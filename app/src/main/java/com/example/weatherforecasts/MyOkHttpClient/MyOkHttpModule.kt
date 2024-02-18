@@ -1,4 +1,4 @@
-package com.example.weatherforecasts
+package com.example.weatherforecasts.MyOkHttpClient
 
 import com.example.weatherforecasts.yandexWeather.AnswerYandexApi
 import dagger.Module

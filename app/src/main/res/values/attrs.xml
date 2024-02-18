@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomViewChart">
+        <attr name="backgroundColor" format="color" />
+        <attr name="lineColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="separator_line" format="dimension" />
+        <attr name="unit_of_measure_abscissa" format="string" />
+        <attr name="unit_of_measure_ordinate" format="string" />
+    </declare-styleable>
+</resources>

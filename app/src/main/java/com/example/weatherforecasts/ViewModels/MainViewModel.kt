@@ -1,12 +1,16 @@
-package com.example.weatherforecasts
+package com.example.weatherforecasts.ViewModels
 
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weatherforecasts.GPS.GPSclient
 import com.example.weatherforecasts.GPS.MyLocation
+import com.example.weatherforecasts.MyGeocoder.MyGeocoder
+import com.example.weatherforecasts.MyOkHttpClient.MyOkHttpClient
+import com.example.weatherforecasts.MySharedPreferencesManager
 import com.example.weatherforecasts.MySharedPreferencesManager.Companion.gpsLatitude
 import com.example.weatherforecasts.MySharedPreferencesManager.Companion.gpsLocPref
 import com.example.weatherforecasts.MySharedPreferencesManager.Companion.gpsLongitude
@@ -22,6 +26,7 @@ class MainViewModel @Inject constructor(
     private val gpSclient: GPSclient,
     private val myOkHttpClient: MyOkHttpClient,
     private val myShPr: MySharedPreferencesManager,
+    private val myGeocoder: MyGeocoder
 ) : ViewModel() {
 
     private val _allWeather = MutableLiveData<List<Item>>()
@@ -44,7 +49,6 @@ class MainViewModel @Inject constructor(
             location = savLoc
 
         updateWeatherList()
-
     }
 
     fun updateLocation() {
@@ -70,6 +74,21 @@ class MainViewModel @Inject constructor(
 
             withContext(Dispatchers.Main) {
                 _allWeather.value = listWeather
+            }
+        }
+    }
+
+    fun updateLocationFromAddress(address: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+
+            myGeocoder.getCoordinatesFromAddress(address) {
+
+                location = MyLocation(it.latitude.toFloat(), it.longitude.toFloat())
+                Log.d(myLog, "loc: ${it.latitude}, ${it.longitude}")
+                updateWeatherList()
+
+                myShPr.saveData(gpsLocPref, gpsLatitude, it.latitude.toFloat())
+                myShPr.saveData(gpsLocPref, gpsLongitude, it.longitude.toFloat())
             }
         }
     }

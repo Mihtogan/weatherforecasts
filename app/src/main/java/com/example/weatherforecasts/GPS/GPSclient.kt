@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.location.LocationManager
 import android.util.Log
-import com.example.weatherforecasts.MainViewModel.Companion.myLog
+import com.example.weatherforecasts.ViewModels.MainViewModel.Companion.myLog
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices

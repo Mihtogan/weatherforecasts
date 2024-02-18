@@ -4,5 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="button_run_weatherListFragment">Перейти к списку погоды</string>
+    <string name="button_run_ChartFragment">Перейти к графику</string>
     <string name="request_for_permission">Дай разрешение</string>
+    <string name="request_cityName">Укажи адрес</string>
 </resources>
